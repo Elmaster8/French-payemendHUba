@@ -4,123 +4,185 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PsyTrading Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #001F3F;
-      color: #F8F8F8;
       margin: 0;
-      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0a0a0a;
+      color: #f2f2f2;
       text-align: center;
     }
+
     h1 {
-      color: #E6B325;
-      margin-top: 30px;
-      font-size: 2.2em;
+      font-size: 2.3rem;
+      margin-top: 40px;
+      color: #fff;
     }
-    h2 {
-      color: #E6B325;
+
+    p {
+      color: #bfbfbf;
+      font-size: 1rem;
+      margin: 10px 0 20px;
     }
-    a.button {
-      display: inline-block;
-      background-color: #E6B325;
-      color: #001F3F;
-      padding: 12px 20px;
-      margin: 10px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    a.button:hover {
-      background-color: #ffcc00;
-      transform: scale(1.03);
-    }
+
     .tier {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 25px;
+      max-width: 400px;
       margin: 20px auto;
-      padding: 20px;
-      max-width: 400px;
+      transition: all 0.3s ease;
     }
+
+    .tier:hover {
+      background: #222;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(255,255,255,0.05);
+    }
+
+    .tier h2 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .tier a {
+      display: inline-block;
+      text-decoration: none;
+      background: #fff;
+      color: #0a0a0a;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin: 8px 5px;
+      transition: all 0.3s ease;
+    }
+
+    .tier a:hover {
+      background: #bfbfbf;
+    }
+
+    .mpesa-block {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 12px;
+      max-width: 420px;
+      margin: 40px auto;
+      padding: 25px;
+    }
+
+    .mpesa-block h2 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .mpesa-number {
+      font-size: 1.2rem;
+      background: #1f1f1f;
+      padding: 12px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #e6e6e6;
+    }
+
     form {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px;
-      padding: 20px;
-      max-width: 400px;
-      margin: 30px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
     }
+
     input, button {
       width: 90%;
-      margin: 8px 0;
-      padding: 10px;
-      border-radius: 6px;
+      padding: 12px;
+      border-radius: 8px;
       border: none;
-      font-size: 1em;
+      font-size: 1rem;
     }
+
+    input {
+      background: #1a1a1a;
+      color: #fff;
+      border: 1px solid #444;
+      text-align: center;
+    }
+
     input[type="file"] {
-      color: #F8F8F8;
+      border: none;
     }
+
     button {
-      background-color: #E6B325;
-      color: #001F3F;
+      background-color: #fff;
+      color: #0a0a0a;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
     }
+
     button:hover {
-      background-color: #ffcc00;
-      transform: scale(1.02);
+      background-color: #bfbfbf;
     }
+
     footer {
-      margin-top: 30px;
+      margin-top: 40px;
       padding: 20px;
-      font-size: 0.9em;
-      color: #ccc;
+      color: #999;
+      border-top: 1px solid #222;
     }
+
     footer a {
-      color: #E6B325;
+      color: #fff;
       text-decoration: none;
+      border: 1px solid #444;
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    footer a:hover {
+      background-color: #fff;
+      color: #000;
     }
   </style>
 </head>
 <body>
 
-  <h1>🐺 PsyTrading Club</h1>
-  <p>Rejoignez la communauté exclusive de traders. Choisissez votre formule et recevez votre lien d’accès VIP par email.</p>
+  <h1>🖤 PsyTrading Club</h1>
+  <p>Rejoignez le club privé des traders. Choisissez votre formule et recevez votre lien d’accès VIP par email.</p>
 
   <div class="tier">
     <h2>🐺 Loup — 39.99 $/mois</h2>
-    <a class="button" href="https://nowpayments.io/payment/?iid=6119840292" target="_blank">Payer en Crypto</a><br>
-    <a class="button" href="https://www.patreon.com/checkout/PsyTradeVIP?rid=26963056&vanity=14895200" target="_blank">Payer via Patreon</a>
+    <a href="https://nowpayments.io/payment/?iid=6119840292" target="_blank">Crypto</a>
+    <a href="https://www.patreon.com/checkout/PsyTradeVIP?rid=26963056&vanity=14895200" target="_blank">Patreon</a>
   </div>
 
   <div class="tier">
     <h2>🌕 Lougarou — Pro Trader</h2>
-    <a class="button" href="https://nowpayments.io/payment/?iid=6116802738" target="_blank">Payer en Crypto</a><br>
-    <a class="button" href="https://www.patreon.com/checkout/PsyTradeVIP?rid=26963065&vanity=14895200" target="_blank">Payer via Patreon</a>
+    <a href="https://nowpayments.io/payment/?iid=6116802738" target="_blank">Crypto</a>
+    <a href="https://www.patreon.com/checkout/PsyTradeVIP?rid=26963065&vanity=14895200" target="_blank">Patreon</a>
   </div>
 
-  <form id="paymentForm">
+  <div class="mpesa-block">
     <h2>💵 Paiement M-Pesa</h2>
-    <p>Effectuez votre dépôt au numéro <strong>+243 830 957 559</strong><br>
-    Puis envoyez votre preuve de paiement ci-dessous 👇</p>
+    <p>Envoyez votre paiement au numéro ci-dessous puis téléversez la preuve.</p>
+    <div class="mpesa-number">+243 830 957 559</div>
 
-    <input type="email" id="email" placeholder="Votre email" required />
-    <input type="text" id="phone" placeholder="Numéro M-Pesa utilisé" />
-    <input type="file" id="screenshot" accept="image/*" required />
-    <button type="submit">📤 Envoyer la preuve</button>
-
-    <p style="font-size:0.9em;color:#ccc;">
-      Votre lien d’accès (valable 30 jours) sera envoyé par email après vérification.
-    </p>
-  </form>
+    <form id="paymentForm">
+      <input type="email" id="email" placeholder="Votre email" required />
+      <input type="text" id="phone" placeholder="Numéro M-Pesa utilisé" />
+      <input type="file" id="screenshot" accept="image/*" required />
+      <button type="submit">📤 Envoyer la preuve</button>
+      <p style="font-size:0.9em;color:#aaa;">Le lien d’accès sera envoyé par email après vérification (valable 30 jours).</p>
+    </form>
+  </div>
 
   <footer>
-    <p>Des questions avant de rejoindre ?<br>
-    👉 <a href="https://t.me/PsytradeFR" target="_blank">Contacter sur Telegram</a></p>
+    <p>Besoin d’aide ou de support ?</p>
+    <a href="https://t.me/PsytradeFR" target="_blank">Contacter sur Telegram</a>
   </footer>
 
   <script>
@@ -158,5 +220,6 @@
       }
     });
   </script>
+
 </body>
 </html>
