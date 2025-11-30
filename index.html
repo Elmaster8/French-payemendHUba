@@ -1,110 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PsyTrading Club</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin:0;
-      font-family:'Montserrat',sans-serif;
-      background:#0a0a0a;
-      color:#f2f2f2;
-      text-align:center;
-    }
-    h1 { font-size:2.5rem; margin-top:40px; color:#fff; }
-    p { color:#bfbfbf; font-size:1rem; margin:10px 0 20px; }
-    .tier {
-      background:#1a1a1a;
-      border:1px solid #333;
-      border-radius:12px;
-      padding:25px;
-      max-width:450px;
-      margin:20px auto;
-      transition:0.3s;
-    }
-    .tier:hover {
-      background:#222;
-      transform:translateY(-5px);
-      box-shadow:0 6px 20px rgba(255,255,255,0.05);
-    }
-    .tier h2 { color:#fff; margin-bottom:10px; }
-    .tier button {
-      display:inline-block;
-      text-decoration:none;
-      background:#fff;
-      color:#0a0a0a;
-      padding:12px 20px;
-      border-radius:8px;
-      font-weight:600;
-      margin:8px 5px;
-      cursor:pointer;
-      transition:0.3s;
-      border:none;
-    }
-    .tier button:hover { background:#bfbfbf; }
-    .mpesa-warning {
-      color:#ff5555;
-      font-weight:bold;
-      margin-top:10px;
-    }
-    footer {
-      margin-top:40px;
-      padding:20px;
-      color:#999;
-      border-top:1px solid #222;
-    }
-    footer a {
-      color:#fff;
-      text-decoration:none;
-      border:1px solid #444;
-      padding:10px 20px;
-      border-radius:8px;
-      display:inline-block;
-      margin-top:10px;
-    }
-    footer a:hover { background:#fff; color:#000; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PsyTrading Club</title>
+<style>
+body { font-family:sans-serif; text-align:center; background:#0a0a0a; color:#fff; }
+button { padding:12px 20px; margin:10px; cursor:pointer; border:none; border-radius:8px; }
+.notice { color:#ffcc00; font-weight:bold; }
+</style>
 </head>
 <body>
 
 <h1>🖤 PsyTrading Club</h1>
-<p>Choisissez votre formule et payez pour recevoir votre lien VIP</p>
+<p>Choisissez votre formule et votre méthode de paiement :</p>
 
 <!-- Loup Tier -->
-<div class="tier">
-  <h2>🐺 Loup — Start Trader</h2>
-  <button onclick="redirectTo('https://nowpayments.io/payment/?iid=6119840292')">Crypto — 47$</button>
-  <button onclick="redirectTo('https://www.patreon.com/checkout/PsyTradeVIP?rid=26963056&vanity=14895200')">Patreon — 50$</button>
-  <p>Après paiement, <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog" target="_blank">remplissez ce formulaire</a> pour recevoir votre lien VIP</p>
+<div>
+<h2>🐺 Loup — Start Trader</h2>
+<button onclick="redirect('https://nowpayments.io/payment/?iid=6119840292')">Crypto — 47$</button>
+<button onclick="redirect('https://www.patreon.com/checkout/PsyTradeVIP?rid=26963056&vanity=14895200')">Patreon — 50$</button>
+<button onclick="mpesaNotice('Loup')">M-Pesa — 50$</button>
 </div>
 
 <!-- Lougarou Tier -->
-<div class="tier">
-  <h2>🌕 Lougarou — Pro Trader</h2>
-  <button onclick="redirectTo('https://nowpayments.io/payment/?iid=6116802738')">Crypto — 105$</button>
-  <button onclick="redirectTo('https://www.patreon.com/checkout/PsyTradeVIP?rid=26963065&vanity=14895200')">Patreon — 99$</button>
-  <p>Après paiement, <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog" target="_blank">remplissez ce formulaire</a> pour recevoir votre lien VIP</p>
+<div>
+<h2>🌕 Lougarou — Pro Trader</h2>
+<button onclick="redirect('https://nowpayments.io/payment/?iid=6116802738')">Crypto — 105$</button>
+<button onclick="redirect('https://www.patreon.com/checkout/PsyTradeVIP?rid=26963065&vanity=14895200')">Patreon — 99.90$</button>
+<button onclick="mpesaNotice('Lougarou')">M-Pesa — 100$</button>
 </div>
 
-<!-- M-Pesa Block -->
-<div class="tier">
-  <h2>💵 M-Pesa</h2>
-  <p>Prix: 50$ ou 100$ selon votre tier</p>
-  <p class="mpesa-warning">⚠️ Merci de télécharger la capture de votre paiement comme preuve dans le formulaire</p>
-  <p>Remplissez le <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog" target="_blank">formulaire Google</a></p>
-  <p>Numéro M-Pesa : +243 830 957 559</p>
-</div>
-
-<footer>
-  <p>Besoin d’aide ou de support ?</p>
-  <a href="https://t.me/PsytradeFR" target="_blank">Contacter sur Telegram</a>
-</footer>
+<p id="mpesa-warning" class="notice"></p>
 
 <script>
-function redirectTo(url){
+function redirect(url) {
   window.location.href = url;
+}
+
+// M-Pesa notice
+function mpesaNotice(tier) {
+  const formLink = "https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog";
+  document.getElementById("mpesa-warning").innerHTML = 
+    `⚠️ Vous avez choisi M-Pesa pour le tier ${tier}. <br>
+    Veuillez remplir le <a href="${formLink}" target="_blank">formulaire ici</a> et uploader votre preuve de paiement.`;
 }
 </script>
 
