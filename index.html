@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PsyTrading Club</title>
-<style>
-body { font-family:sans-serif; text-align:center; background:#0a0a0a; color:#fff; }
-button { padding:12px 20px; margin:10px; cursor:pointer; border:none; border-radius:8px; }
-.notice { color:#ffcc00; font-weight:bold; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PsyTrading Club</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#0a0a0a; color:#f2f2f2; text-align:center; }
+    .tier { background:#1a1a1a; margin:20px auto; padding:25px; border-radius:12px; max-width:400px; }
+    button { padding:12px 20px; margin:8px; border:none; border-radius:8px; cursor:pointer; }
+    a { color:#00f; text-decoration:none; }
+  </style>
 </head>
 <body>
 
 <h1>🖤 PsyTrading Club</h1>
-<p>Choisissez votre formule et votre méthode de paiement :</p>
+<p>Choisissez votre formule et payez pour recevoir votre lien VIP</p>
 
-<!-- Loup Tier -->
-<div>
-<h2>🐺 Loup — Start Trader</h2>
-<button onclick="redirect('https://nowpayments.io/payment/?iid=6119840292')">Crypto — 47$</button>
-<button onclick="redirect('https://www.patreon.com/checkout/PsyTradeVIP?rid=26963056&vanity=14895200')">Patreon — 50$</button>
-<button onclick="mpesaNotice('Loup')">M-Pesa — 50$</button>
+<!-- Crypto & Patreon Block -->
+<div class="tier">
+  <h2>🐺 Loup — Start Trader</h2>
+  <button onclick="redirectTo('https://nowpayments.io/payment/?iid=6119840292')">Crypto — 47$</button>
+  <button onclick="redirectTo('https://www.patreon.com/checkout/PsyTradeVIP?rid=26963056&vanity=14895200')">Patreon — 50$</button>
+  <p>Après paiement, <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog" target="_blank">remplissez ce formulaire</a> pour recevoir votre lien VIP</p>
 </div>
 
-<!-- Lougarou Tier -->
-<div>
-<h2>🌕 Lougarou — Pro Trader</h2>
-<button onclick="redirect('https://nowpayments.io/payment/?iid=6116802738')">Crypto — 105$</button>
-<button onclick="redirect('https://www.patreon.com/checkout/PsyTradeVIP?rid=26963065&vanity=14895200')">Patreon — 99.90$</button>
-<button onclick="mpesaNotice('Lougarou')">M-Pesa — 100$</button>
+<div class="tier">
+  <h2>🌕 Lougarou — Pro Trader</h2>
+  <button onclick="redirectTo('https://nowpayments.io/payment/?iid=6116802738')">Crypto — 105$</button>
+  <button onclick="redirectTo('https://www.patreon.com/checkout/PsyTradeVIP?rid=26963065&vanity=14895200')">Patreon — 99$</button>
+  <p>Après paiement, <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog" target="_blank">remplissez ce formulaire</a> pour recevoir votre lien VIP</p>
 </div>
 
-<p id="mpesa-warning" class="notice"></p>
+<!-- M-Pesa Block -->
+<div class="tier">
+  <h2>💵 M-Pesa</h2>
+  <p>Prix: 50$ ou 100$ selon votre tier</p>
+  <p>⚠️ Merci de télécharger la capture de votre paiement comme preuve</p>
+  <p>Remplissez le <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog" target="_blank">formulaire Google</a></p>
+</div>
 
 <script>
-function redirect(url) {
+function redirectTo(url){
   window.location.href = url;
-}
-
-// M-Pesa notice
-function mpesaNotice(tier) {
-  const formLink = "https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog";
-  document.getElementById("mpesa-warning").innerHTML = 
-    `⚠️ Vous avez choisi M-Pesa pour le tier ${tier}. <br>
-    Veuillez remplir le <a href="${formLink}" target="_blank">formulaire ici</a> et uploader votre preuve de paiement.`;
 }
 </script>
 
