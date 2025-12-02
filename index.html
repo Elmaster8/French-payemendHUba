@@ -1,49 +1,30 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PsyTrading Club</title>
-  <style>
-    body { font-family: Arial, sans-serif; background:#0a0a0a; color:#f2f2f2; text-align:center; }
-    .tier { background:#1a1a1a; margin:20px auto; padding:25px; border-radius:12px; max-width:400px; }
-    button { padding:12px 20px; margin:8px; border:none; border-radius:8px; cursor:pointer; }
-    a { color:#00f; text-decoration:none; }
-  </style>
-</head>
-<body>
+<select id="paymentMethod">
+  <option value="">Choisir le mode de paiement</option>
+  <option value="Patreon">Patreon</option>
+  <option value="Crypto">Crypto</option>
+  <option value="MPesa">M-Pesa</option>
+</select>
 
-<h1>🖤 PsyTrading Club</h1>
-<p>Choisissez votre formule et payez pour recevoir votre lien VIP</p>
-
-<!-- Crypto & Patreon Block -->
-<div class="tier">
-  <h2>🐺 Loup — Start Trader</h2>
-  <button onclick="redirectTo('https://nowpayments.io/payment/?iid=6119840292')">Crypto — 47$</button>
-  <button onclick="redirectTo('https://www.patreon.com/checkout/PsyTradeVIP?rid=26963056&vanity=14895200')">Patreon — 50$</button>
-  <p>Après paiement, <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog" target="_blank">remplissez ce formulaire</a> pour recevoir votre lien VIP</p>
-</div>
-
-<div class="tier">
-  <h2>🌕 Lougarou — Pro Trader</h2>
-  <button onclick="redirectTo('https://nowpayments.io/payment/?iid=6116802738')">Crypto — 105$</button>
-  <button onclick="redirectTo('https://www.patreon.com/checkout/PsyTradeVIP?rid=26963065&vanity=14895200')">Patreon — 99$</button>
-  <p>Après paiement, <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog" target="_blank">remplissez ce formulaire</a> pour recevoir votre lien VIP</p>
-</div>
-
-<!-- M-Pesa Block -->
-<div class="tier">
-  <h2>💵 M-Pesa</h2>
-  <p>Prix: 50$ ou 100$ selon votre tier</p>
-  <p>⚠️ Merci de télécharger la capture de votre paiement comme preuve</p>
-  <p>Remplissez le <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog" target="_blank">formulaire Google</a></p>
+<div id="mpesaForm" style="display:none;">
+  <input type="email" id="mpesaEmail" placeholder="Votre email">
+  <input type="text" id="mpesaPhone" placeholder="Numéro M-Pesa utilisé">
+  <input type="file" id="mpesaFile">
+  <button onclick="submitMpesa()">Envoyer preuve</button>
 </div>
 
 <script>
-function redirectTo(url){
-  window.location.href = url;
-}
-</script>
+const paymentMethod = document.getElementById('paymentMethod');
+const mpesaForm = document.getElementById('mpesaForm');
 
-</body>
-</html>
+paymentMethod.addEventListener('change', () => {
+  if (paymentMethod.value === 'MPesa') {
+    mpesaForm.style.display = 'block'; // show M-Pesa fields
+  } else if (paymentMethod.value === 'Patreon') {
+    window.location.href = 'https://www.patreon.com/...'; // redirect immediately
+  } else if (paymentMethod.value === 'Crypto') {
+    window.location.href = 'https://nowpayments.io/...'; // redirect immediately
+  } else {
+    mpesaForm.style.display = 'none';
+  }
+});
+</script>
