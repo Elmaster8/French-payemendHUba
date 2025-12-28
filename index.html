@@ -26,14 +26,23 @@
     color: #cfe9ff;
   }
 
+  /* CONTAINER FOR SIDE BY SIDE */
+  .cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
   .card {
     background: linear-gradient(180deg, #071a2f, #050f1e);
     border: 1px solid rgba(125, 211, 252, 0.15);
     padding: 22px;
     border-radius: 14px;
-    margin: 22px auto;
-    width: 90%;
-    max-width: 480px;
+    width: 100%;
+    max-width: 460px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(6px);
     opacity: 0;
@@ -41,8 +50,8 @@
     animation: fadeInUp 0.8s ease forwards;
   }
 
-  .card:nth-of-type(1) { animation-delay: 0.3s; }
-  .card:nth-of-type(2) { animation-delay: 0.5s; }
+  .card:nth-child(1) { animation-delay: 0.3s; }
+  .card:nth-child(2) { animation-delay: 0.5s; }
 
   .card h3 {
     color: #bae6fd;
@@ -110,42 +119,46 @@
 <h1>🚀 Rejoins PsyTrade Académie</h1>
 <p>Choisis ton abonnement 👇</p>
 
-<!-- LOUP -->
-<div class="card">
-  <h3>🐺 Loup — Start Trader</h3>
+<div class="cards">
 
-  <p class="price">47$ / mois — Crypto</p>
-  <a class="btn" href="https://nowpayments.io/payment/?iid=6119840292" target="_blank">Payer en Crypto</a>
+  <!-- LOUP -->
+  <div class="card">
+    <h3>🐺 Loup — Start Trader</h3>
 
-  <p class="price">50$ / mois — Patreon</p>
-  <a class="btn" href="https://www.patreon.com/checkout/PsyTradeVIP?rid=26963056&vanity=14895200" target="_blank">S'abonner sur Patreon</a>
+    <p class="price">47$ / mois — Crypto</p>
+    <a class="btn" href="https://nowpayments.io/payment/?iid=6119840292" target="_blank">Payer en Crypto</a>
 
-  <p class="price">50$ / mois — M-Pesa</p>
-  <p>📞 +243 830 957 559</p>
-  <p class="warning">⚠️ Uploadez la preuve dans le formulaire ci-dessous</p>
+    <p class="price">50$ / mois — Patreon</p>
+    <a class="btn" href="https://www.patreon.com/checkout/PsyTradeVIP?rid=26963056&vanity=14895200" target="_blank">S'abonner sur Patreon</a>
 
-  <a class="btn" style="background:linear-gradient(135deg,#ffb347,#ff7e5f);color:#1a1200;"
-     href="https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog"
-     target="_blank">Valider mon paiement</a>
-</div>
+    <p class="price">50$ / mois — M-Pesa</p>
+    <p>📞 +243 830 957 559</p>
+    <p class="warning">⚠️ Uploadez la preuve dans le formulaire ci-dessous</p>
 
-<!-- LOUGAROU -->
-<div class="card">
-  <h3>🌕 Lougarou — Pro Trader</h3>
+    <a class="btn" style="background:linear-gradient(135deg,#ffb347,#ff7e5f);color:#1a1200;"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog"
+       target="_blank">Valider mon paiement</a>
+  </div>
 
-  <p class="price">105$ / mois — Crypto</p>
-  <a class="btn" href="https://nowpayments.io/payment/?iid=6116802738" target="_blank">Payer en Crypto</a>
+  <!-- LOUGAROU -->
+  <div class="card">
+    <h3>🌕 Lougarou — Pro Trader</h3>
 
-  <p class="price">99.90$ / mois — Patreon</p>
-  <a class="btn" href="https://www.patreon.com/checkout/PsyTradeVIP?rid=26963065&vanity=14895200" target="_blank">S'abonner sur Patreon</a>
+    <p class="price">105$ / mois — Crypto</p>
+    <a class="btn" href="https://nowpayments.io/payment/?iid=6116802738" target="_blank">Payer en Crypto</a>
 
-  <p class="price">100$ / mois — M-Pesa</p>
-  <p>📞 +243 830 957 559</p>
-  <p class="warning">⚠️ Uploadez la preuve dans le formulaire ci-dessous</p>
+    <p class="price">99.90$ / mois — Patreon</p>
+    <a class="btn" href="https://www.patreon.com/checkout/PsyTradeVIP?rid=26963065&vanity=14895200" target="_blank">S'abonner sur Patreon</a>
 
-  <a class="btn" style="background:linear-gradient(135deg,#ffb347,#ff7e5f);color:#1a1200;"
-     href="https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog"
-     target="_blank">Valider mon paiement</a>
+    <p class="price">100$ / mois — M-Pesa</p>
+    <p>📞 +243 830 957 559</p>
+    <p class="warning">⚠️ Uploadez la preuve dans le formulaire ci-dessous</p>
+
+    <a class="btn" style="background:linear-gradient(135deg,#ffb347,#ff7e5f);color:#1a1200;"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSdgOOoeEaIaSuFfWlaNnTXE_4XUfHHlTE6NTrpwe-s74WoVFQ/viewform?usp=dialog"
+       target="_blank">Valider mon paiement</a>
+  </div>
+
 </div>
 
 <footer>
